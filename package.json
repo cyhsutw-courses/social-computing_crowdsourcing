@@ -1,0 +1,16 @@
+{
+  "name":"camera-recommendation",
+  "description": "Crowdsourcing app",
+  "version": "0.0.1",
+  "repository":{
+    "type" : "git", 
+    "url" : "https://github.com/ChengYuHsu/sc-assignment-3.git"
+  },
+  "private": false,
+  "dependencies": {
+    "express": "4.x",
+    "body-parser":"*",
+    "express-session":"*",
+    "connect-redis":"*"
+  }
+}

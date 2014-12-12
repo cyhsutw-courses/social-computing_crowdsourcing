@@ -1,0 +1,20 @@
+create table camera (
+	id int primary key,
+	img text,
+	spec text,
+	af text,
+	brand text,
+	flash text,
+	size text,	
+	focal text,
+	ISO text,
+	display text,	
+	display_size text,	
+	res text,
+	mp text,
+	model text,	
+	opt_zoom text,	
+	sensor text,
+	weight text,	
+	year text
+);
