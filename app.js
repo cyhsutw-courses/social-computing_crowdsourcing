@@ -180,6 +180,6 @@ app.post('/tasks', function(req, res){
 	}
 });
 
-app.listen(1314, function(){
-	console.log("> Server running at 127.0.0.1:1314 <");
+app.listen(80, function(){
+	console.log("> Server running at 127.0.0.1:80 <");
 });
