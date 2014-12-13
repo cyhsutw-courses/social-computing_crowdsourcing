@@ -11,6 +11,8 @@
     "express": "4.x",
     "body-parser":"*",
     "express-session":"*",
-    "connect-redis":"*"
+    "connect-redis":"*",
+    "sqlite3":"*",
+    "shortid":"*"
   }
 }

@@ -30,6 +30,8 @@ row_map = [
 
 with open('info.csv') as f:
 	infoR = csv.reader(f)
+	c.execute('DELETE FROM CAMERA');
+	conn.commit();
 
 	for row in infoR:
 		if row[0].find('C') == -1:

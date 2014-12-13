@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8" />
 	<title>Camera Recommendation</title>
 	<script type="text/javascript" src="index.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="index.css" />
 </head>
 <body>
-	<h1 id="title">Step 1: Basic Information</h1>
-	<div id="info-wrapper" hidden>
-		<form id="info">
-			<fieldset>
-				<legend>Your Gender</legend>
-				
-					<input type="radio" name="gender" id="female"/>
-					<label for="female">Female</label>
+	<div id="wrapper">
+		<h1 id="title">Step 1 of 3: Basic Information</h1>
+		<div id="info-wrapper">
+			<form id="info">
+				<fieldset>
+					<legend>Gender</legend>
+					
+						<input type="radio" name="gender" id="female" value="female" />
+						<label for="female">Female</label>
 
-					<input type="radio" name="gender" id= "male"/>
-					<label for="male">Male</label>
-			</fieldset>
-			<fieldset>
-				<legend>
-					Considerations when buying a digital camera (price, megapixels, ...etc).
-				</legend>
-				<textarea rows="5" cols="150"></textarea>
-			</fieldset>
-			<input type="button" value="Start"/>
-		</form>
+						<input type="radio" name="gender" id= "male" value="male" />
+						<label for="male">Male</label>
+				</fieldset>
+				<fieldset>
+					<legend>
+						Considerations when buying a digital camera (price, megapixels, ...etc).
+					</legend>
+					<textarea rows="5" cols="150" name="concern"></textarea>
+				</fieldset>
+				<input type="button" value="Start" id="c_user"/>
+			</form>
+		</div>
+		<div id="vote1"></div>
+		<div id="dialog"></div>
 	</div>
-	<div id="vote1">
-		
 
-	</div>
-	<div id="vote2">
-		
-	</div>
 </body>
 </html>
