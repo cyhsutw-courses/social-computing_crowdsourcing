@@ -13,6 +13,7 @@ var shortId = require('shortid');
 var app = express();
 
 var taskId = 1;
+var taskSet = [10, 6];
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -52,15 +53,14 @@ app.post('/users', function(req, res){
 		
 		var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 		var key = shortId.generate();
-		db.run('INSERT INTO user (ip, key, task, gender, concern) VALUES (?, ?, ?, ?, ?)', [ip, key, taskId, req.body.gender, req.body.concern], function(err){
+		db.run('INSERT INTO user (ip, key, task, gender, concern) VALUES (?, ?, ?, ?, ?)', [ip, key, taskSet[taskId], req.body.gender, req.body.concern], function(err){
 			var uid = this.lastID;
-
-			db.all('SELECT * FROM objects WHERE id=?', [taskId], function(err, rows){
-				var tid = taskId;
+			db.all('SELECT * FROM objects WHERE id=?', [taskSet[taskId]], function(err, rows){
+				var tid = taskSet[taskId];
 
 				taskId++;
-				if(taskId > 10){
-					taskId %= 10;
+				if(taskId >= taskSet.length){
+					taskId %= taskSet.length;
 				}
 				var tasks = JSON.parse(rows[0]['object']);
 				var cameras = [];
